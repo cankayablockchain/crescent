@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/frontend\app\melos_app.iml" filepath="$PROJECT_DIR$/frontend\app\melos_app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/frontend\packages\app_ui\melos_app_ui.iml" filepath="$PROJECT_DIR$/frontend\packages\app_ui\melos_app_ui.iml" />
+      <module fileurl="file://$PROJECT_DIR$/frontend\packages\authentication_client\authentication_client\melos_authentication_client.iml" filepath="$PROJECT_DIR$/frontend\packages\authentication_client\authentication_client\melos_authentication_client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/frontend\packages\form_inputs\melos_form_inputs.iml" filepath="$PROJECT_DIR$/frontend\packages\form_inputs\melos_form_inputs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/frontend\packages\generative_ai_repository\melos_generative_ai_repository.iml" filepath="$PROJECT_DIR$/frontend\packages\generative_ai_repository\melos_generative_ai_repository.iml" />
+      <module fileurl="file://$PROJECT_DIR$/frontend\packages\authentication_client\supabase_authentication_client\melos_supabase_authentication_client.iml" filepath="$PROJECT_DIR$/frontend\packages\authentication_client\supabase_authentication_client\melos_supabase_authentication_client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/frontend\packages\user_repository\melos_user_repository.iml" filepath="$PROJECT_DIR$/frontend\packages\user_repository\melos_user_repository.iml" />
+      <module fileurl="file://$PROJECT_DIR$/frontend\packages\web3_assets_repository\melos_web3_assets_repository.iml" filepath="$PROJECT_DIR$/frontend\packages\web3_assets_repository\melos_web3_assets_repository.iml" />
+      <module fileurl="file://$PROJECT_DIR$/melos_terb.iml" filepath="$PROJECT_DIR$/melos_terb.iml" />
+    </modules>
+  </component>
+</project>
