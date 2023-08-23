@@ -11,17 +11,19 @@ class OnboardPage extends StatelessWidget implements AutoRouteWrapper {
   const OnboardPage({super.key});
 
   @override
-  Widget build(BuildContext context) => BlocListener<MainBloc, MainState>(
-        listener: (context, state) => state.mapOrNull(
-          authenticated: (_) {
-            return context.router.replaceAll([const HomeRoute()]);
-          },
-          unauthenticated: (_) {
-            return context.router.replaceAll([const AuthRoute()]);
-          },
-        ),
-        child: const AutoRouter(),
-      );
+  Widget build(BuildContext context) {
+    return BlocListener<MainBloc, MainState>(
+      listener: (context, state) => state.mapOrNull(
+        authenticated: (_) {
+          return context.router.replaceAll([const HomeRoute()]);
+        },
+        unauthenticated: (_) {
+          return context.router.replaceAll([const AuthRoute()]);
+        },
+      ),
+      child: const AutoRouter(),
+    );
+  }
 
   @override
   Widget wrappedRoute(BuildContext context) => BlocProvider(

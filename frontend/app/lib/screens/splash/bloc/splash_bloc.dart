@@ -21,16 +21,12 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
     _AppStarted event,
     Emitter<SplashState> emit,
   ) async {
-    try {
-      emit(const SplashState.loading());
-      // Navigate to the main route.
+    emit(const SplashState.loading());
+    // Navigate to the main route.
 
-      await injectInSplash();
+    // Initialize app dependencies.
+    await injectInSplash();
 
-      emit(const SplashState.ready());
-    } catch (e) {
-      // Navigate to the error route.
-      emit(SplashState.error(e.toString()));
-    }
+    emit(const SplashState.ready());
   }
 }

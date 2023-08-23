@@ -1,55 +1,50 @@
 import 'dart:async';
 
-import 'package:authentication_client/authentication_client.dart';
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:user_repository/user_repository.dart';
+import 'package:wc_web3_authentication_client/wc_web3_authentication_client.dart';
 
 part 'main_bloc.freezed.dart';
 part 'main_event.dart';
 part 'main_state.dart';
 
 class MainBloc extends Bloc<MainEvent, MainState> {
-  MainBloc(UserRepository authenticationRepository)
-      : _authenticationRepository = authenticationRepository,
+  MainBloc(WCWeb3AuthenticationClient web3repository)
+      : _web3repository = web3repository,
         super(const MainState.unknown()) {
     on<_Started>(_onStarted);
     on<_AuthStateChanged>(_onAuthStateChanged);
 
-    _authStateSubscription =
-        _authenticationRepository.onAuthStateChanges.listen(
-      (authState) => add(_AuthStateChanged(authState)),
-    );
+    _web3repository.walletConnectModalService!
+        .addListener(() => add(const _AuthStateChanged()));
   }
 
-  final UserRepository _authenticationRepository;
-  late final StreamSubscription<AuthState> _authStateSubscription;
+  final WCWeb3AuthenticationClient _web3repository;
 
   Future<void> _onStarted(
     _Started event,
     Emitter<MainState> emit,
   ) async {
-    _authenticationRepository.currentUser.fold(
-      () => emit(const MainState.unauthenticated()),
-      (user) => emit(MainState.authenticated(user)),
-    );
+    final isConnected =
+        _web3repository.walletConnectModalService?.address != null &&
+            _web3repository.walletConnectModalService!.isConnected;
+    if (isConnected) {
+      emit(const MainState.authenticated());
+    } else {
+      emit(const MainState.unauthenticated());
+    }
   }
 
   Future<void> _onAuthStateChanged(
     _AuthStateChanged event,
     Emitter<MainState> emit,
   ) async {
-    final session = event.authstate.session;
-    if (session == null) {
-      emit(const MainState.unauthenticated());
+    final isConnected =
+        _web3repository.walletConnectModalService?.address != null;
+    if (isConnected) {
+      emit(const MainState.authenticated());
     } else {
-      emit(MainState.authenticated(session.user));
+      emit(const MainState.unauthenticated());
     }
-  }
-
-  @override
-  Future<void> close() {
-    _authStateSubscription.cancel();
-    return super.close();
   }
 }

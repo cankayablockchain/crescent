@@ -11,14 +11,9 @@ class AppTheme {
     return ThemeData(
       useMaterial3: true,
       textTheme: _textTheme,
-      colorSchemeSeed: Colors.greenAccent,
+      colorSchemeSeed: Colors.blue,
       inputDecorationTheme: _inputDecorationTheme,
     );
-  }
-
-  /// Default `ColorScheme` for App UI.
-  ColorScheme get _colorScheme {
-    return const ColorScheme.light();
   }
 
   /// Default `TextTheme` for App UI.
@@ -38,9 +33,4 @@ class AppTheme {
 /// Dark Mode App [ThemeData].
 class AppDarkTheme extends AppTheme {
   const AppDarkTheme();
-
-  @override
-  ColorScheme get _colorScheme {
-    return const ColorScheme.dark();
-  }
 }

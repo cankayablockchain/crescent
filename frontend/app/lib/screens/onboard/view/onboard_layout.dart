@@ -9,21 +9,24 @@ class OnboardLayout extends StatelessWidget {
       padding: const EdgeInsets.all(16),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
-        mainAxisAlignment: MainAxisAlignment.end,
         children: [
           const Spacer(flex: 2),
-          const Spacer(flex: 2),
-          FilledButton.tonal(
-            onPressed: () {
-              context.router.push(const SignUpRoute());
-            },
-            child: const Text('Create Account'),
+          const Text(
+            'CRESCENT',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontSize: 32,
+              fontWeight: FontWeight.bold,
+            ),
           ),
+          const Spacer(flex: 2),
           TextButton(
             onPressed: () {
-              context.router.push(const SignInRoute());
+              getIt<WCWeb3AuthenticationClient>()
+                  .walletConnectModalService!
+                  .open(context: context);
             },
-            child: const Text('Sign In'),
+            child: const Text('Connect Wallet'),
           ),
         ],
       ),

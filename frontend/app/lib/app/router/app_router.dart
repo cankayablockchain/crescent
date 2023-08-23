@@ -29,18 +29,6 @@ class AppRouter extends $AppRouter {
                   page: OnboardRoute.page,
                   path: 'onboard',
                 ),
-
-                // Sign In Route
-                AutoRoute(
-                  page: SignInRoute.page,
-                  path: 'sign-in',
-                ),
-
-                // Sign Up Route
-                AutoRoute(
-                  page: SignUpRoute.page,
-                  path: 'sign-up',
-                ),
               ],
             ),
 
@@ -49,21 +37,49 @@ class AppRouter extends $AppRouter {
               page: AppRoute.page,
               children: [
                 AutoRoute(
+                  page: GovernanceRoute.page,
+                  path: 'governance',
+                ),
+                AutoRoute(
+                  page: ProposalRoute.page,
+                  path: 'proposal',
+                ),
+                AutoRoute(
+                  page: OfferCreateRoute.page,
+                  path: 'offer-create',
+                ),
+                AutoRoute(
+                  page: OfferDetailRoute.page,
+                  path: 'offer-detail',
+                ),
+                AutoRoute(
+                  page: TokenDetailRoute.page,
+                  path: 'token-detail',
+                ),
+                AutoRoute(
+                  page: TransactionsRoute.page,
+                  path: 'transactions',
+                ),
+                AutoRoute(
                   initial: true,
                   page: HomeRoute.page,
                   path: 'home',
                   children: [
                     AutoRoute(
-                      page: FeedRoute.page,
-                      path: 'feed',
+                      page: SettingsRoute.page,
+                      path: 'settings',
+                    ),
+                    AutoRoute(
+                      page: AccountRoute.page,
+                      path: 'account',
                     ),
                     AutoRoute(
                       page: AssistantRoute.page,
                       path: 'Assistant',
                     ),
                     AutoRoute(
-                      page: SettingsRoute.page,
-                      path: 'settings',
+                      page: OfferFeedRoute.page,
+                      path: 'offers',
                     ),
                   ],
                 ),

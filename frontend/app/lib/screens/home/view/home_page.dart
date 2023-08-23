@@ -15,7 +15,8 @@ class HomePage extends StatelessWidget implements AutoRouteWrapper {
   Widget build(BuildContext context) {
     return AutoTabsScaffold(
       routes: const [
-        FeedRoute(),
+        AccountRoute(),
+        OfferFeedRoute(),
         AssistantRoute(),
         SettingsRoute(),
       ],
@@ -25,24 +26,23 @@ class HomePage extends StatelessWidget implements AutoRouteWrapper {
           onDestinationSelected: tabsRouter.setActiveIndex,
           destinations: const [
             NavigationDestination(
-              icon: Icon(IconlyLight.home),
-              selectedIcon: Icon(
-                IconlyBold.home,
-              ),
-              label: 'Home',
+              icon: Icon(IconlyLight.profile),
+              selectedIcon: Icon(IconlyBold.profile),
+              label: 'Account',
             ),
             NavigationDestination(
-              icon: Icon(IconlyLight.voice2),
-              selectedIcon: Icon(
-                IconlyBold.voice2,
-              ),
+              icon: Icon(IconlyLight.paper),
+              selectedIcon: Icon(IconlyBold.paper),
+              label: 'Offers',
+            ),
+            NavigationDestination(
+              icon: Icon(IconlyLight.chat),
+              selectedIcon: Icon(IconlyBold.chat),
               label: 'Assistant',
             ),
             NavigationDestination(
               icon: Icon(IconlyLight.setting),
-              selectedIcon: Icon(
-                IconlyBold.setting,
-              ),
+              selectedIcon: Icon(IconlyBold.setting),
               label: 'Settings',
             ),
           ],

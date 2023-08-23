@@ -8,13 +8,14 @@ environment:
   sdk: ">=3.1.0 <4.0.0"
 
 dependencies:
+
+  walletconnect_flutter_v2: ^2.1.4
+  walletconnect_modal_flutter: ^2.1.0
   # Analytics
 
   # Animation
 
   # Client
-  authentication_client:
-  supabase_authentication_client:
   speech_to_text: ^6.3.0
   flutter_tts: ^3.7.0
 
@@ -45,14 +46,14 @@ dependencies:
   auto_route: ^7.8.0
 
   # Network
-  supabase_flutter: ^1.10.13
 
   # Performance
 
   # Repository
-  user_repository:
   generative_ai_repository:
+  web3_repository:
 
+  
   # Security
 
   # State Management
@@ -69,6 +70,9 @@ dependencies:
 
   # Utility
   form_inputs:
+
+
+  wc_web3_authentication_client:
 
 dev_dependencies:
   # Code Quality

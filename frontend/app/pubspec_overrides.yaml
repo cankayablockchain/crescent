@@ -1,14 +1,15 @@
-# melos_managed_dependency_overrides: app_ui,form_inputs,authentication_client,supabase_authentication_client,user_repository,generative_ai_repository
+# melos_managed_dependency_overrides: app_ui,form_inputs,authentication_client,supabase_authentication_client,user_repository,generative_ai_repository,web3_repository,wc_web3_authentication_client
 dependency_overrides:
   app_ui:
     path: ..\\packages\\app_ui
-  authentication_client:
-    path: ..\\packages\\authentication_client\\authentication_client
+
   form_inputs:
     path: ..\\packages\\form_inputs
   generative_ai_repository:
     path: ..\\packages\\generative_ai_repository
-  supabase_authentication_client:
-    path: ..\\packages\\authentication_client\\supabase_authentication_client
-  user_repository:
-    path: ..\\packages\\user_repository
+
+  http: ^0.13.6  
+  wc_web3_authentication_client:
+    path: ..\\packages\\web3_authentication_client\\wc_web3_authentication_client
+  web3_repository:
+    path: ..\\packages\\web3_repository
