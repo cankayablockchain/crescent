@@ -45,7 +45,7 @@ Future<void> injectInSplash() async {
     ..registerSingleton(
       GenerativeAiRepository(
         chat: ChatOpenAI(
-          apiKey: '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',
+          apiKey: '',
           model: 'gpt-3.5-turbo-0613',
           temperature: 0,
         ),
